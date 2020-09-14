@@ -1,0 +1,24 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "Create quiz for your students using gui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBhanushali/QuizApp.git"
+  },
+  "author": "Shivam Bhanushali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SBhanushali/QuizApp/issues"
+  },
+  "homepage": "https://github.com/SBhanushali/QuizApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5"
+  }
+}
