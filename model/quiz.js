@@ -7,22 +7,23 @@ const quizSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  question: {
-    type: String,
-    required: true,
-  },
-  inputType: {
-    type: String,
-    required: true,
-  },
-  explanation: {
-    type: String,
-  },
-  options: [
+  moduleQuestions: [
     {
-      id: mongoose.Schema.Types.ObjectId,
-      value: String,
-      isCorrect: Boolean,
+      question: { type: String, required: true },
+      inputType: {
+        type: String,
+        required: true,
+      },
+      explanation: {
+        type: String,
+      },
+      options: [
+        {
+          id: mongoose.Schema.Types.ObjectId,
+          value: String,
+          isCorrect: Boolean,
+        },
+      ],
     },
   ],
 });
