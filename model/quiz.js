@@ -9,6 +9,7 @@ const quizSchema = mongoose.Schema({
   },
   moduleQuestions: [
     {
+      id: mongoose.Schema.Types.ObjectId,
       question: { type: String, required: true },
       inputType: {
         type: String,
