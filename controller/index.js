@@ -5,10 +5,7 @@ const Quiz = require("../model/quiz");
 exports.create = (req, res) => {
   const quiz = new Quiz();
   quiz.moduleName = req.body.moduleName;
-  quiz.question = req.body.question;
-  quiz.inputType = req.body.inputType;
-  quiz.explanation = req.body.explanation;
-  quiz.options = req.body.options;
+  quiz.moduleQuestions = req.body.moduleQuestions;
   quiz
     .save()
     .then(() => {
@@ -20,6 +17,7 @@ exports.create = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+// Get questions by module name
 exports.getAllQuestionOfModule = (req, res) => {
   Quiz.find({ moduleName: req.body.moduleName })
     .then((docs) => {
