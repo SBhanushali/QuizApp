@@ -1,4 +1,4 @@
-const { create } = require("../controller");
+const { create, getAllQuestionOfModule } = require("../controller");
 
 //Initialize express router
 const router = require("express").Router();
@@ -10,8 +10,11 @@ router.get("/", (req, res) => {
     message: "Welcome to QuizApp made with love!",
   });
 });
-
+// Create questions
 router.post("/create", create);
+
+// Get all the question from module
+router.get("/get", getAllQuestionOfModule);
 
 // Export API routes
 module.exports = router;
