@@ -2,6 +2,7 @@ const {
   create,
   getAllQuestionOfModule,
   checkAnswer,
+  getAllModules,
 } = require("../controller");
 
 //Initialize express router
@@ -17,8 +18,11 @@ router.get("/", (req, res) => {
 // Create questions
 router.post("/create", create);
 
+// Get all the modules
+router.get("/modules", getAllModules);
+
 // Get all the question from module
-router.get("/get", getAllQuestionOfModule);
+router.get("/questions", getAllQuestionOfModule);
 
 // Check answer
 router.get("/check", checkAnswer);

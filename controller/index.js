@@ -21,7 +21,19 @@ exports.create = (req, res) => {
 
 // Get questions by module name
 exports.getAllQuestionOfModule = (req, res) => {
-  Quiz.find({ moduleName: req.body.moduleName })
+  Quiz.find({ moduleName: req.query.moduleName })
+    .then((docs) => {
+      res.status(200).json({
+        success: true,
+        data: docs,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+// Get all modules
+exports.getAllModules = (req, res) => {
+  Quiz.find({}, { moduleName: 1 })
     .then((docs) => {
       res.status(200).json({
         success: true,
