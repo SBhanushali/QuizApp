@@ -1,4 +1,8 @@
-const { create, getAllQuestionOfModule } = require("../controller");
+const {
+  create,
+  getAllQuestionOfModule,
+  checkAnswer,
+} = require("../controller");
 
 //Initialize express router
 const router = require("express").Router();
@@ -15,6 +19,9 @@ router.post("/create", create);
 
 // Get all the question from module
 router.get("/get", getAllQuestionOfModule);
+
+// Check answer
+router.get("/check", checkAnswer);
 
 // Export API routes
 module.exports = router;
