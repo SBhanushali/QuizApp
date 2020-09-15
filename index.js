@@ -1,6 +1,7 @@
 let express = require("express");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
+require("dotenv/config");
 
 // Initialize the app
 let app = express();
@@ -14,8 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to Mongoose and set connection variable
-const dbURI =
-  "mongodb+srv://snbhanushali:00000000@cluster0.t7lll.mongodb.net/quizapp?retryWrites=true&w=majority";
+const dbURI = process.env.DB_CONNECTION;
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("connected to database"))
