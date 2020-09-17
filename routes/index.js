@@ -25,7 +25,7 @@ router.get("/modules", getAllModules);
 router.get("/questions", getAllQuestionOfModule);
 
 // Check answer
-router.get("/check", checkAnswer);
+router.post("/check", checkAnswer);
 
 // Export API routes
 module.exports = router;
