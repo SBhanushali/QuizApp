@@ -16,12 +16,20 @@ exports.create = (req, res) => {
         message: "Question created",
       });
     })
-    .catch((err) => console.log(err));
+    .catch(() => {
+      res.status(403).json({
+        success: false,
+        data: "Module name should be unique",
+      });
+    });
 };
 
 // Get questions by module name
 exports.getAllQuestionOfModule = (req, res) => {
-  Quiz.find({ moduleName: req.query.moduleName })
+  Quiz.find(
+    { moduleName: req.query.moduleName },
+    { "moduleQuestions.explanation": 0, "moduleQuestions.options.isCorrect": 0 }
+  )
     .then((docs) => {
       res.status(200).json({
         success: true,
