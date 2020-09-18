@@ -8,6 +8,13 @@ const {
 //Initialize express router
 const router = require("express").Router();
 
+// Set default API response
+router.get("/", (req, res) => {
+  res.json({
+    status: "API working",
+    message: "Welcome to QuizApp made with love!",
+  });
+});
 // Create questions
 router.post("/create", create);
 
