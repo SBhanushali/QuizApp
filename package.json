@@ -4,6 +4,7 @@
   "description": "Create quiz for your students using gui",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +19,11 @@
   "homepage": "https://github.com/SBhanushali/QuizApp#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.10.5"
+  },
+  "engines": {
+    "node": "13.11.0"
   }
 }
