@@ -1,7 +1,5 @@
 let express = require("express");
-let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
-require("dotenv/config");
 
 // Initialize the app
 let app = express();
